@@ -1,0 +1,170 @@
+---
+title: "MA [46]15 --- Data Science in R"
+subtitle: "Lab 0: Introduction and setup"
+date: "Week of 2025-09-05"
+titlegraphic: ".left[.footnote[Last updated: `r Sys.Date()`]]" # title footnote
+output:
+  xaringan::moon_reader:
+    lib_dir: libs
+    css: ["libs/default.css", "libs/bu.css", "libs/bu-fonts.css"]
+#    chakra: libs/remark-latest.min.js
+    nature:
+      titleSlideClass: [middle, left]
+      highlightLines: true
+      highlightStyle: github # highlightjs style
+      countIncrementalSlides: false
+---
+
+```{r setup, include=FALSE}
+options(show.signif.stars = FALSE)
+knitr::opts_chunk$set(tidy = FALSE) # turn off formatR's tidy
+knitr::opts_chunk$set(fig.path='figures/', fig.asp=.75, fig.align='center')
+```
+
+## Setup
+
+- Install [*R*](https://cran.r-project.org) and [*RStudio*](https://posit.co/download/rstudio-desktop)
+- Install Git
+
+  * Git on Windows: install [Scoop](https://scoop.sh) and then, in a command prompt,
+  ```sh
+  scoop install git
+  ```
+  
+  * Git on Mac: in a terminal,
+  ```sh
+  xcode-select --install
+  ```
+  or install [Homebrew](https://brew.sh) and then
+  ```sh
+  brew install git
+  ```
+
+---
+
+## GitHub
+
+- Go to [GitHub](https://github.com) and hit *Sign Up*
+
+- **Important**: use your `bu.edu` email when registering!
+
+- Tips on picking a username<sup>1</sup>:
+.footnote[<sup>1</sup>Thanks to [Happy Git with R](http://happygitwithr.com)!]
+
+  * Incorporate your actual name! People like to know who they’re dealing with. Also makes your username easier for people to guess or remember.
+  
+  * Reuse your username from other contexts, e.g., Twitter or Slack.
+  
+  * Pick a username you will be comfortable revealing to your future boss.
+  
+  * Be as unique as possible in as few characters as possible. 
+Make it timeless. Don’t highlight your current university, employer, or place of residence.
+
+  * Avoid words laden with special meaning in programming, such as `NULL` and `NA`.
+
+> Now head to BB and complete the **survey**!
+
+---
+
+## Git setup
+
+- In RStudio, open a shell (`Tools > Terminal`) and enter
+
+```sh
+git config --global user.name "Your Name"
+git config --global user.email "bu_login@bu.edu"
+```
+
+- Check with
+
+```sh
+git config --global user.name
+git config --global user.email
+```
+
+---
+
+## GitHub setup: SSH keys
+
+- In RStudio, go to `Tools > Global Options`, `Git/SVN`, then click on "Create SSH key..."
+
+```{r rstudio-ssh1, echo = FALSE, out.width = "50%"}
+knitr::include_graphics("figures/rstudio-ssh1.png")
+```
+
+---
+
+## GitHub setup: SSH keys
+
+- Specify a **RSA** key and provide a passphrase
+
+```{r rstudio-ssh2, echo = FALSE, out.width = "50%"}
+knitr::include_graphics("figures/rstudio-ssh2.png")
+```
+
+
+---
+
+## GitHub setup: SSH keys
+
+- After creation, click on "View public key" and copy the text
+
+```{r rstudio-ssh3, echo = FALSE, out.width = "50%"}
+knitr::include_graphics("figures/rstudio-ssh3.png")
+```
+
+---
+
+## GitHub setup: SSH keys
+
+- Finally, go to GitHub, click on your profile picture in the top right corner and select "Settings". Select the "SSH and GPG keys" tab, click on "New SSH key", paste the public key text you just copied and hit "Add SSH key"
+
+```{r github-ssh, echo = FALSE, out.width = "80%"}
+knitr::include_graphics("figures/github-ssh.png")
+```
+
+- From now on, when cloning your repos use the "SSH" option!
+
+---
+
+### Fork the Repo on Your GitHub
+
+Click the "Fork" button.
+
+### Clone the Repo using RStudio
+
+1. **Open RStudio**.
+
+2. Click on **File > New Project**.
+
+3. Select **Version Control**.
+
+4. Choose **Git**.
+
+5. In the **Repository URL** field, paste your GitHub repo's URL (e.g., **https://github.com/username/reponame.git**).
+
+6. Choose a local folder where the repo will be cloned.
+
+7. Click **Create Project**.
+
+
+---
+
+### Make Changes Locally
+
+Revise the R Markdown File and **Knit** it.
+
+### Commit and Push Changes to Your GitHub
+
+1. Go to the **Git pane/tab** (top-right).
+
+2. **Stage** your changes: check the boxes for files you want to include in the commit.
+
+3. Write a meaningful **commit message**, and then click **Commit**.
+
+4. **Push** your changes to GitHub.
+
+5. Check your GitHub repo online.
+
+
+
